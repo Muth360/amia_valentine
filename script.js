@@ -12,15 +12,3 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-<!-- Keep your audio tag exactly like this (no controls) -->
-<audio id="myAudio" loop>
-  <source src="Frou Frou - A New Kind of Love (Lyrics) _ Are ya falling in love I've a feeling you are 4.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  // This function starts the music when she clicks anywhere
-  document.addEventListener('click', function() {
-    var audio = document.getElementById("myAudio");
-    audio.play();
-  }, { once: true }); // 'once: true' ensures it only tries to play on the first click
-</script>
