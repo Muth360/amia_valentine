@@ -1,17 +1,13 @@
 const noBtn = document.getElementById("nobutton");
-const music = document.getElementById("bg-music");
 
-if (noBtn) {
-  noBtn.addEventListener("mouseover", () => {
-    const x = (Math.random() - 0.5) * 600;
-    const y = (Math.random() - 0.5) * 400;
+// Move No button randomly but only a little
+noBtn.addEventListener("mouseover", () => {
+  const maxMoveX = 800; // max pixels to move left/right
+  const maxMoveY = 600; // max pixels to move up/down
 
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  });
-}
+  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
+  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
 
-document.addEventListener("click", () => {
-  if (music) {
-    music.play();
-  }
-}, { once: true });
+  noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
