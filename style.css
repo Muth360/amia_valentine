@@ -1,5 +1,5 @@
 body {
-  background-color: hotpink;
+  background-color: lightpink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,7 @@ body {
 
 .question {
   color: white;
-  border: 3px solid lightpink;  
+  border: 3px solid hotpink;  
   padding: 20px 30px;         
   border-radius: 15px;        
   display: inline-block;
