@@ -11,6 +11,11 @@ body{
   display: inline-block;
 }
 
+.buttons{
+ width: 300px;      
+  display: flex;
+  justify-content: space-between;
+}
 .yesbutton{
   align-items: left;
 }
