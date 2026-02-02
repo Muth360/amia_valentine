@@ -1,13 +1,31 @@
 const noBtn = document.getElementById("nobutton");
 
-// Move No button randomly but only a little
-noBtn.addEventListener("mouseover", () => {
-  const maxMoveX = 150; // max pixels to move left/right
-  const maxMoveY = 100; // max pixels to move up/down
+let wiggleInterval;
 
-  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
-  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
+// Function to start wiggling
+function startWiggle() {
+  if (wiggleInterval) return; // avoid multiple intervals
 
-  noBtn.style.transition = "all 0.2s ease"; // smooth but not too fast
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
-});
+  wiggleInterval = setInterval(() => {
+    const maxMoveX = 50; // max horizontal wiggle
+    const maxMoveY = 30; // max vertical wiggle
+
+    const x = (Math.random() - 0.5) * maxMoveX; // -25 to +25
+    const y = (Math.random() - 0.5) * maxMoveY; // -15 to +15
+
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }, 150); // wiggle every 150ms
+}
+
+// Function to stop wiggling
+function stopWiggle() {
+  clearInterval(wiggleInterval);
+  wiggleInterval = null;
+  noBtn.style.transform = `translate(0, 0)`; // reset position
+}
+
+// Start wiggling on mouse over
+noBtn.addEventListener("mouseover", startWiggle);
+
+// Stop wiggling on mouse out
+noBtn.addEventListener("mouseout", stopWiggle);
