@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("nobutton");
 
-  noBtn.addEventListener("mouseenter", () => {
-    const maxX = window.innerWidth - noBtn.offsetWidth;
-    const maxY = window.innerHeight - noBtn.offsetHeight;
+  if (noBtn) {
+    noBtn.addEventListener("mouseover", () => {
+      // Calculate random positions within the viewport bounds
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.position = "fixed";
-    noBtn.style.transition = "transform 0.15s ease";
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  });
+      noBtn.style.position = "absolute"; // Switches to absolute to move freely
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  }
 });
