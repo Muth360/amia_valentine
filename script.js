@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("nobutton");
 
-  noBtn.addEventListener("mouseover", () => {
-    const maxMoveX = 600; // left/right range
-    const maxMoveY = 400; // up/down range
+  noBtn.addEventListener("mouseenter", () => {
+    const maxMoveX = 600;
+    const maxMoveY = 400;
 
     const x = (Math.random() - 0.5) * maxMoveX;
     const y = (Math.random() - 0.5) * maxMoveY;
