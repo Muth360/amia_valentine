@@ -1,36 +1,67 @@
-body{
-  background-color: Lightpink;
+body {
+  background-color: lightpink;
+  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;   
-  justify-content: center; 
-  height: 100vh;          
-  margin: 0;      
-  
-}
-
-.question{
-  color: white;
-  border: 3px solid hotpink;  
-  padding: 10px 20px;         
-  border-radius: 10px;        
-  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 30px; 
 }
 
-.yesbutton{
- background-color: pink;
-  padding: 10px 20px;
+.question {
+  color: white;
+  background-color: hotpink; 
+  border: 3px solid deeppink;  
+  padding: 20px 15px;
+  border-radius: 15px;        
+  max-width: 90%;           
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Buttons container */
+.buttons {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px; 
+}
+
+button {
+  flex: 1;                 
+  padding: 15px;
+  font-size: 18px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
-.nobutton{
-   background-color: lightgray;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+#yesbutton {
+  background-color: #ff69b4; 
+  color: white;
+}
+
+#nobutton {
+  background-color: #fff0f5; 
+  color: hotpink;
+  border: 2px solid hotpink;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
 }
