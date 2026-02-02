@@ -54,3 +54,14 @@ body {
 .tenor-gif-embed{
     margin-bottom: 60px;
 }
+
+.corner-img {
+  position: fixed; 
+  width: 100px;    
+  z-index: 10;    
+}
+
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; }
+.bottom-left { bottom: 10px; left: 10px; }
+.bottom-right { bottom: 10px; right: 10px; }
