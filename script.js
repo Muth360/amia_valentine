@@ -1,13 +1,14 @@
-noBtn.addEventListener("mouseover", () => {
-  const maxMoveX = 400; // max pixels to move left/right
-  const maxMoveY = 300; // max pixels to move up/down
-  const maxMoveX = 800; // max pixels to move left/right
-  const maxMoveY = 600; // max pixels to move up/down
+document.addEventListener("DOMContentLoaded", () => {
+  const noBtn = document.getElementById("nobutton");
 
-  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
-  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
+  noBtn.addEventListener("mouseover", () => {
+    const maxMoveX = 600; // left/right range
+    const maxMoveY = 400; // up/down range
 
-  noBtn.style.transition = "all 0.05s ease"; // smooth but not too fast
-  noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    const x = (Math.random() - 0.5) * maxMoveX;
+    const y = (Math.random() - 0.5) * maxMoveY;
+
+    noBtn.style.transition = "transform 0.08s ease";
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  });
 });
