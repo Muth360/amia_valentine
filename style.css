@@ -1,3 +1,15 @@
 body{
   background-color: Lightpink;
 }
+
+.question{
+  align-items: center;
+}
+
+.yesbutton{
+  align-items: left;
+}
+
+.nobutton{
+  align-items: right;
+}
