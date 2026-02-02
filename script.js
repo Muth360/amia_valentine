@@ -1,8 +1,14 @@
 const noBtn = document.getElementById("nobutton");
 
-// Make No button run away when hovered
+// Move No button randomly around the whole page fast
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 200 - 100; // random left/right movement
-  const y = Math.random() * 100 - 50;  // random up/down movement
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  const pageWidth = window.innerWidth - noBtn.offsetWidth;
+  const pageHeight = window.innerHeight - noBtn.offsetHeight;
+
+  const x = Math.random() * pageWidth;
+  const y = Math.random() * pageHeight;
+
+  noBtn.style.transition = "all 0.1s ease"; // very fast
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
 });
