@@ -1,25 +1,54 @@
+/* Body styling */
 body {
-  background-color: lightpink;
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffc1cc, #ffe6f0); /* soft pink gradient */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 20px;
   text-align: center;
 }
 
+/* Question box */
 .question {
   color: white;
-  background-color: hotpink; 
-  border: 3px solid deeppink;  
-  padding: 20px 15px;
-  border-radius: 15px;        
-  max-width: 90%;           
+  background: #ff69b4; /* hotpink */
+  border: 3px solid #ff1493;  
+  padding: 25px 20px;
+  border-radius: 25px;
+  max-width: 90%;
   margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 15px rgba(255, 20, 147, 0.4);
+  position: relative;
+  animation: pulse 1.5s infinite;
+}
+
+/* Heart decorations */
+.question::before,
+.question::after {
+  content: "❤️";
+  position: absolute;
+  font-size: 30px;
+}
+
+.question::before {
+  top: -10px;
+  left: -10px;
+}
+
+.question::after {
+  top: -10px;
+  right: -10px;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Buttons container */
@@ -29,34 +58,43 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 15px; 
+  gap: 15px;
 }
 
+/* Buttons styling */
 button {
-  flex: 1;                 
+  flex: 1;
   padding: 15px;
   font-size: 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 5px 10px rgba(255, 105, 180, 0.3);
 }
 
+/* Yes button */
 #yesbutton {
-  background-color: #ff69b4; 
+  background-color: #ff6eb4;
   color: white;
+  font-weight: bold;
 }
 
+/* No button */
 #nobutton {
-  background-color: #fff0f5; 
-  color: hotpink;
-  border: 2px solid hotpink;
+  background-color: #fff0f5; /* lavenderblush */
+  color: #ff1493;
+  border: 2px solid #ff69b4;
+  font-weight: bold;
 }
 
+/* Button hover effect */
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(255, 105, 180, 0.5);
 }
 
+/* Mobile view */
 @media (max-width: 480px) {
   .buttons {
     flex-direction: column;
