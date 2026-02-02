@@ -1,25 +1,36 @@
 body{
   background-color: Lightpink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  height: 100vh;          
+  margin: 0;      
+  
 }
 
 .question{
   color: white;
-  align-items: center;
   border: 3px solid hotpink;  
   padding: 10px 20px;         
   border-radius: 10px;        
   display: inline-block;
+  text-align: center;
+  margin-bottom: 30px; 
 }
 
-.buttons{
- width: 300px;      
-  display: flex;
-  justify-content: space-between;
-}
 .yesbutton{
-  align-items: left;
+ background-color: pink;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .nobutton{
-  align-items: right;
+   background-color: lightgray;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
