@@ -27,7 +27,7 @@ body {
 }
 
 #yesbutton {
-  background-color: pink;
+  background-color: Red;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
@@ -36,7 +36,7 @@ body {
 }
 
 #nobutton {
-  background-color: lightgray;
+  background-color: lightgrey;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
