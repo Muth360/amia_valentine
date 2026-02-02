@@ -1,14 +1,22 @@
 const noBtn = document.getElementById("nobutton");
 
-// Move No button randomly but only a little
-noBtn.addEventListener("mouseover", () => {
-  const maxMoveX = 800; // max pixels to move left/right
-  const maxMoveY = 600; // max pixels to move up/down
+  let hoverCount = 0;
 
-  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
-  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
+  noBtn.addEventListener("mouseover", () => {
+    hoverCount++;
 
-  noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
-});
+    const maxMoveX = 300;
+    const maxMoveY = 200;
 
+    const x = (Math.random() - 0.5) * maxMoveX;
+    const y = (Math.random() - 0.5) * maxMoveY;
+
+    noBtn.style.transition = "transform 0.15s ease";
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    // After 10 attempts → show images
+    if (hoverCount === 10) {
+      document.getElementById("surprise-left").style.display = "block";
+      document.getElementById("surprise-right").style.display = "block";
+    }
+  });
