@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("nobutton");
 
   noBtn.addEventListener("mouseenter", () => {
-    const maxMoveX = 600;
-    const maxMoveY = 400;
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
 
-    const x = (Math.random() - 0.5) * maxMoveX;
-    const y = (Math.random() - 0.5) * maxMoveY;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-    noBtn.style.transition = "transform 0.08s ease";
+    noBtn.style.position = "fixed";
+    noBtn.style.transition = "transform 0.15s ease";
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
   });
 });
