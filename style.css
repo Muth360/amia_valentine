@@ -15,7 +15,7 @@ body {
   padding: 20px 30px;
   border-radius: 15px;
   font-size: 24px;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .buttons {
@@ -39,17 +39,14 @@ body {
   border-radius: 10px;
   font-size: 18px;
   cursor: pointer;
-}
-
-.MESSAGE {
-  color: white;
-  text-align: center;
+  position: relative;
 }
 
 .corner-img {
   position: fixed;
-  width: 300px;
+  width: 200px;
   z-index: 10;
+  display: none; /* hide initially */
 }
 
 .top-left { top: 10px; left: 10px; }
