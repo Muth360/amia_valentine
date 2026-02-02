@@ -1,21 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const noBtn = document.getElementById("nobutton");
 
-  if (noBtn) {
-    noBtn.addEventListener("mouseover", () => {
-      // 1. Get random coordinates based on the screen size
-      // We subtract the button size so it doesn't go off-screen
-      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+// Move No button randomly but only a little
+noBtn.addEventListener("mouseover", () => {
+  const maxMoveX = 400; // max pixels to move left/right
+  const maxMoveY = 300; // max pixels to move up/down
+  const maxMoveX = 800; // max pixels to move left/right
+  const maxMoveY = 600; // max pixels to move up/down
 
-      // 2. Force the button to move
-      noBtn.style.position = "fixed"; // 'fixed' lets it move anywhere on screen
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-      
-      console.log("The button moved to:", x, y);
-    });
-  } else {
-    console.error("Could not find the button with ID 'nobutton'");
-  }
+  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
+  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
+
+  noBtn.style.transition = "all 0.05s ease"; // smooth but not too fast
+  noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
