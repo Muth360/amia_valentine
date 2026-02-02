@@ -21,11 +21,23 @@
     <button id="nobutton">NO 😔</button>
   </div>
 
-<button id="start-btn">Enter Site</button>
-<audio id="bg-music" loop>
+<audio id="bg-music" autoplay loop>
   <source src="Frou Frou - A New Kind of Love (Lyrics) _ Are ya falling in love I've a feeling you are 4.mp3" type="audio/mpeg">
 </audio>
+<script>
+  const music = document.getElementById("bg-music");
+  music.volume = 0.5;
+
+  document.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+</script>
+
 
 <script src="script.js"></script>
+
+  <img src="download (1).png" id="surprise-left" class="corner-img top-left" style="display:none;">
+<img src="image-removebg-preview (7).png" id="surprise-right" class="corner-img top-right" style="display:none;">
+
 </body>
 </html>
