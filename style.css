@@ -44,3 +44,9 @@ body {
   position: relative;
   font-size: 18px;
 }
+
+.MESSAGE{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
