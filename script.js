@@ -14,7 +14,7 @@ noBtn.addEventListener("mouseover", () => {
 const music = document.getElementById("bg-music");
 
 document.addEventListener("click", () => {
-  if (music) {
-    music.play();
-  }
+  music.muted = false;
+  music.play();
 }, { once: true });
+
