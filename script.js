@@ -13,12 +13,8 @@ noBtn.addEventListener("mouseover", () => {
 });
 const music = document.getElementById("bg-music");
 
-function startMusic() {
-  music.play().catch(err => {
-    console.log("Music play blocked:", err);
-  });
-  document.removeEventListener("click", startMusic);
-}
-
-// Start music on first user interaction
-document.addEventListener("click", startMusic);
+document.addEventListener("click", () => {
+  if (music) {
+    music.play();
+  }
+}, { once: true });
