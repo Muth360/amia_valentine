@@ -11,3 +11,14 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
+const music = document.getElementById("bg-music");
+
+function startMusic() {
+  music.play().catch(err => {
+    console.log("Music play blocked:", err);
+  });
+  document.removeEventListener("click", startMusic);
+}
+
+// Start music on first user interaction
+document.addEventListener("click", startMusic);
