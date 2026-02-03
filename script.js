@@ -1,34 +1,13 @@
-function showCornerGifs() {
-  const leftGif = document.createElement("div");
-  const rightGif = document.createElement("div");
+const noBtn = document.getElementById("nobutton");
 
-  leftGif.className = "corner-gif left";
-  rightGif.className = "corner-gif right";
+// Move No button randomly but only a little
+noBtn.addEventListener("mouseover", () => {
+  const maxMoveX = 800; // max pixels to move left/right
+  const maxMoveY = 600; // max pixels to move up/down
 
-  leftGif.innerHTML = `
-    <div class="tenor-gif-embed"
-      data-postid="7926424135311815001"
-      data-share-method="host"
-      data-aspect-ratio="1"
-      data-width="150px">
-    </div>
-  `;
+  const x = (Math.random() - 0.5) * maxMoveX; // -75 to +75
+  const y = (Math.random() - 0.5) * maxMoveY; // -50 to +50
 
-  rightGif.innerHTML = `
-    <div class="tenor-gif-embed"
-      data-postid="7926424135311815001"
-      data-share-method="host"
-      data-aspect-ratio="1"
-      data-width="150px">
-    </div>
-  `;
-
-  document.body.appendChild(leftGif);
-  document.body.appendChild(rightGif);
-
-  // Reload Tenor script so the new embeds render
-  const script = document.createElement("script");
-  script.src = "https://tenor.com/embed.js";
-  script.async = true;
-  document.body.appendChild(script);
-}
+  noBtn.style.transition = "all 0.02s ease"; // smooth but not too fast
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
